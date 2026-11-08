@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- Pantalla 4: Menú de selección de operaciones -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Operations menu - Order Management App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Operations menu</h1>
+    <p>Select an operation:</p>
+
+    <form id="menuForm">
+      <label><input type="radio" name="operation" value="newOrder.html" checked> Create a new order</label>
+      <label><input type="radio" name="operation" value="viewMenu.html"> View orders</label>
+    </form>
+
+    <div class="center">
+      <a class="button secondary" href="index.html">Back to start</a>
+      <button class="button" id="goButton">Go</button>
+    </div>
+  </div>
+
+  <script>
+    // Va a la página de la operación seleccionada
+    function goToOperation() {
+      const selected = document.querySelector('input[name="operation"]:checked');
+      window.location.href = selected.value;
+    }
+    // Asocia la función al evento click del botón
+    document.getElementById("goButton").addEventListener("click", goToOperation);
+  </script>
+</body>
+</html>
